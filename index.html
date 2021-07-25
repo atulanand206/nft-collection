@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <link rel="stylesheet" type="text/css" href="switch.css" />
+  <title>NFT Collection | Atul Anand</title>
+</head>
+
+<body>
+
+  <div class="header-wrapper">
+    <header class="header-text">
+      <h2>NFT Collection</h2>
+    </header>
+
+    <div class="toggle-container">
+      <label class="toggle" for="checkbox">
+        <input class="checkbox" type="checkbox" id="checkbox" checked="false">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    
+  </div>
+
+
+
+  <div class="links">
+    <p>Here's the curated list of all the NFTs owned on the blockchain.</p>
+    <a href="https://mintable.app/art/item/But-is-cautious-When-you-are-given-with-a-choice-you-juggle-and-one-little-push-just-pushes/J1udxnkRiMy9cVZ">But is cautious</a>
+    <a href="https://mintable.app/art/item/Anger-is-a-booster-Act-as-required/aYzBe26lh_fWuW4">Anger is a booster</a>
+    <a href="https://mintable.app/art/item/Look-beyond-the-future-Its-upto-you-to-get-wherever-youd-like-to-see-yourself/q0OpxFzB-So5jtr">Yet vs Now</a>
+  </div> 
+
+</body>
+<script>
+  const darkModeKey = 'dark-mode'
+
+  const check = document.getElementById("checkbox")
+  
+  document.documentElement.setAttribute("data-theme", "light")
+
+  const isDarkModeEnabled = () => {
+    if (localStorage.getItem(darkModeKey) === 'enabled' || localStorage.getItem(darkModeKey) === 'disabled')
+      return localStorage.getItem(darkModeKey) === 'enabled' 
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+
+  const enableDarkMode = () => {
+    localStorage.setItem(darkModeKey, 'enabled')
+    document.documentElement.setAttribute("data-theme", "dark")
+    check.checked = false
+  }
+
+  const disableDarkMode = () => {
+    localStorage.setItem(darkModeKey, 'disabled')
+    document.documentElement.setAttribute("data-theme", "light")
+    check.checked = true
+  }
+
+  const onCheckedChange = (event) => {
+    const checked = event.target.checked
+    if (checked) disableDarkMode()
+    else enableDarkMode()
+  }
+
+  check.addEventListener("change", onCheckedChange, false)
+
+  window.matchMedia('(prefers-color-scheme: dark)').addListener(e => { if (e.matches) enableDarkMode(); else disableDarkMode() })
+
+  if (isDarkModeEnabled()) enableDarkMode()
+
+  check.checked = !isDarkModeEnabled()
+</script>
+
+</html>

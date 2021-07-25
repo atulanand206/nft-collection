@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+:root {
+  --color-inc: hsl(163, 72%, 41%);
+  --color-dec: hsl(356, 69%, 56%);
+
+	--color-toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+  --tint-facebook: hsl(208, 92%, 53%);
+  --tint-twitter: hsl(203, 89%, 53%);
+  --tint-instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --tint-youtube: hsl(348, 97%, 39%);
+
+  --ff: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  font-family: var(--ff);
+}
+
+body {
+	min-width: 320px;
+	color: var(--color-primary);
+	background: var(--color-background);
+}
+
+.header-wrapper {
+	width: 100vw;
+	margin-top: 1em;
+	display: grid;
+	flex-direction: row;
+}
+
+.header-text {
+	padding-left: 2em;
+	grid-row: 1;
+}
+
+.toggle-container {
+	padding-right: 2em;
+	grid-row: 1;
+}
+
+.links {
+	margin-top: 3em;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.links > * {
+	color: var(--color-primary);
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+
+.links > a {
+	font-style: italic;
+}

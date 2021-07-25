@@ -1,0 +1,80 @@
+[data-theme="light"] {
+  --color-primary: hsl(230, 17%, 14%);
+  --color-secondary: hsl(228, 12%, 44%);
+  --color-card-background: hsl(227, 47%, 96%);
+  --color-card-background-hover: hsl(225, 100%, 98%);
+  --color-background: hsl(0, 0%, 100%);
+}
+
+[data-theme="dark"] {
+  --color-primary: hsl(0, 0%, 100%);
+  --color-secondary: hsl(228, 34%, 66%);
+  --color-card-background: hsl(228, 28%, 20%);
+  --color-card-background-hover: hsl(232, 19%, 15%);
+  --color-background: hsl(230, 17%, 14%);
+}
+
+/* Dark Theme Toggle Switcher */
+.toggle-container {
+  display: flex;
+	align-items: center;
+	justify-self: end;
+	padding-right: 1em;
+}
+
+.toggle-container > * {
+  width: 100%;
+}
+
+.toggle-text {
+  font-size: 1em;
+	padding-inline: 0.5em;
+	width: max-content;
+}
+
+.toggle {
+	position: relative;
+	width: 4em;
+	height: 2em;
+}
+
+.checkbox {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--color-toggle);
+	--webkit-trransition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: '';
+	height: 1.5em;
+	width: 1.5em;
+	left: 0.25em;
+	top: 0.25em;
+	background-color: var(--color-background);
+	--webkit-trransition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+.checkbox:checked + .slider:before {
+	transform: translateX(2em);
+}
+
+.slider.round {
+	border-radius: 2em;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
